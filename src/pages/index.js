@@ -21,11 +21,9 @@ export default function Home() {
           <div className='w-1/2'>
             <Image src={profilePic} alt='joe_senny' className='w-full h-auto'/>
           </div>
-          <div className='w-1/2'>
 
-              
-                <AnimatedText text= 'Engineering Dreams into Reality Through Code and Design.' className='!text-6xl'/>
-
+          <div className='w-1/2 flex flex-col items-center' >
+             <AnimatedText text= 'Engineering Dreams into Reality Through Code and Design.' className='!text-6xl '/>
                 <p>
                   As a skilled full-stack developer, I am passionate about turning creative ideas into impactful web applications. Delve into my latest projects and articles, highlighting my mastery in React.js and web development.
                 </p>
