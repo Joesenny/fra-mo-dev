@@ -11,7 +11,7 @@ const Footer = () => {
         <Layout className='py-8 flex items-center justify-between'>
             <span>{new Date().getFullYear()}&copy; All Rights Reserved</span>
             <div className='flex items-center'>
-                Build With <span className='text-red-500 text-lg'>&#9825;</span> 
+                Build With <span className='text-red-500 text-2xl'>&#9825;</span> 
                 by&nbsp; <Link href='Https://www.twitter.com/joesenny' target={'_blank'}
                 className='underline underline-offset-2'>joeSenny</Link>
                 

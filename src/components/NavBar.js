@@ -8,7 +8,7 @@ import {motion} from 'framer-motion'
 
 const CustomLink = ({ href, title, className='' }) => {
   const router = useRouter();
-  console.log(router) 
+ 
 
   return (
     <Link href={href} className={`${className} relative group`}>
