@@ -1,10 +1,10 @@
-import Layout from '@/components/Layout'
+import Layout from '../components/Layout'
 import Head from 'next/head'
 import Image from 'next/image'
 import profilePic from '../../public/images/profile/chick-ink-pic.png'
-import AnimatedText from '@/components/AnimatedText'
+import AnimatedText from '../components/AnimatedText'
 import Link from 'next/link'
-import { LinkArrow } from '@/components/icons'
+import { LinkArrow } from '../components/icons'
 
 
 export default function Home() {
