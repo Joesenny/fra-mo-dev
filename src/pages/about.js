@@ -1,9 +1,39 @@
 import AnimatedText from '@/components/AnimatedText'
 import Layout from '@/components/Layout'
 import Head from 'next/head'
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import Image from 'next/image'
 import JoeSenny from '../../public/images/profile/picresize.png'
+import {useInView, useSpring, useMotionValue } from 'framer-motion'
+
+const AnimatedNumbers = ({value}) => {
+const ref = useRef(null)
+
+const motionValue = useMotionValue(0)
+const springValue = useSpring(motionValue, { duration: 3000 })
+const isInView =  useInView(ref)
+
+useEffect(() => {
+  if (isInView) {
+    motionValue.set(value)
+  }
+}, [isInView, motionValue, value])
+
+useEffect(() => {
+  springValue.on('change', (latest) => {
+    if(ref.current && latest.toFixed(0) <= value) {
+      ref.current.textContent = latest.toFixed()
+    }
+  })  
+
+    }, [springValue, value])
+
+  
+
+  return <span ref={ref}> </span>
+}
+
+
 
 const about = () => {
   return (
@@ -16,12 +46,10 @@ const about = () => {
         </Head>
 
         <main className='flex w-full flex-col-3 items-center justify-center mb-10 '>
-           <Layout className='pt-16'>
+          <Layout className='pt-16'>
             <AnimatedText text="Driven by Dreams, Defined by Dedication" 
             className='mb-16'/>
             <div className='flex flex-row-4 justify-center'>
-            
-
                 <div className=' w-1/2 mb-10 flex flex-col items-start justify-start '>
                     <h2 className='mb-4 px-8 py-2 text-lg font-bold uppercase text-dark/70'> Biography</h2>
                       <p className='px-8 font-medium'>
@@ -45,27 +73,36 @@ const about = () => {
                       </p> 
               
                 </div>
-                < div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light mb-5 ml-3 '>
+                <div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light mb-5 ml-3 '>
                   <div className=' absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark'/>
-                <Image src={JoeSenny} alt="Joe Senenfelder" 
-                 className='w-full h-auto rounded-2xl px-2 py-2 '/>
+                  <Image src={JoeSenny} alt="Joe Senenfelder" 
+                  className='w-full h-auto rounded-2xl px-2 py-2 '/>
                 </div>
 
-              <div>
+              <div className='col-span-2 flex flex-col items-center justify-between pl-10'>
 
-                <div>
-                  <span>  </span>
-                  <h2> </h2>
+                <div className='flex flex-col items-end justify-center'>
+                  <span className='inline-block text-7xl font-bold'>
+                    <AnimatedNumbers value={30}/> +
+                  </span>
+                  <h2 className='text-xl font-medium capitalize text-dark/70'
+                  > projects </h2>
                 </div>
 
-                <div>
-                  <span>  </span>
-                  <h2> </h2>
+                <div className='flex flex-col items-end justify-center'>
+                  <span className='inline-block text-7xl font-bold'>
+                    <AnimatedNumbers value={40}/>+ 
+                  </span>
+                  <h2 className='text-xl font-medium capitalize text-dark/70'
+                  > articles </h2>
                 </div>
                 
-                <div>
-                  <span>  </span>
-                  <h2> </h2>
+                <div className='flex flex-col items-end justify-center'>
+                  <span className='inline-block text-7xl font-bold'>
+                  <AnimatedNumbers value={100}/> % 
+                    </span>
+                    <h2 className='text-xl font-medium capitalize text-dark/70'
+                  > satisfaction </h2>
                 </div>
                 
 
@@ -80,8 +117,9 @@ const about = () => {
 
 
 
-            </Layout>
-            </main>
+          </Layout>
+        
+        </main>
 
 
 
