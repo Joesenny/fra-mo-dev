@@ -5,7 +5,7 @@ import profilePic from '../../public/images/profile/chick-ink-pic.png'
 import AnimatedText from '../components/AnimatedText'
 import Link from 'next/link'
 import { LinkArrow } from '../components/icons'
-
+import HireMe from '../components/HireMe'
 
 export default function Home() {
   return (
@@ -52,6 +52,11 @@ export default function Home() {
         </div>
 
         </Layout>
+
+       <HireMe/>
+       <div>
+
+       </div>
 
       </main>
     </>
