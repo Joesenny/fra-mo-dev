@@ -5,13 +5,14 @@ import React, { useRef, useEffect } from 'react'
 import Image from 'next/image'
 import JoeSenny from '../../public/images/profile/picresize.png'
 import {useInView, useSpring, useMotionValue } from 'framer-motion'
+import Skills from '@/components/Skills'
 
 const AnimatedNumbers = ({value}) => {
 const ref = useRef(null)
 
 const motionValue = useMotionValue(0)
 const springValue = useSpring(motionValue, { duration: 3000 })
-const isInView =  useInView(ref)
+const isInView =  useInView(ref, {once: true}) 
 
 useEffect(() => {
   if (isInView) {
@@ -55,7 +56,7 @@ const about = () => {
                       <p className='px-8 font-medium'>
                       Hello there! I am JoeSenny, a dedicated web developer and UI/UX designer with a knack for 
                       shaping aesthetically pleasing, functional, and user-centric digital solutions. My drive 
-                      for innovation and ability to bring the vision of a client to life is unwavering. I constantly 
+                      for innovation and ability to bring a client's vision to life is unwavering. I constantly
                       embrace new technologies and design methods to stay at the forefront of the digital landscape.
                         
                       </p>
@@ -73,7 +74,7 @@ const about = () => {
                       </p> 
               
                 </div>
-                <div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light mb-5 ml-3 '>
+                <div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light mb-5'>
                   <div className=' absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark'/>
                   <Image src={JoeSenny} alt="Joe Senenfelder" 
                   className='w-full h-auto rounded-2xl px-2 py-2 '/>
@@ -116,7 +117,7 @@ const about = () => {
 
 
 
-
+          <Skills/>
           </Layout>
         
         </main>
