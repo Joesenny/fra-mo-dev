@@ -56,7 +56,7 @@ const about = () => {
                       <p className='px-8 font-medium'>
                       Hello there! I am JoeSenny, a dedicated web developer and UI/UX designer with a knack for 
                       shaping aesthetically pleasing, functional, and user-centric digital solutions. My drive 
-                      for innovation and ability to bring a client's vision to life is unwavering. I constantly
+                      for innovation and ability to bring a clients vision to life is unwavering. I constantly
                       embrace new technologies and design methods to stay at the forefront of the digital landscape.
                         
                       </p>
