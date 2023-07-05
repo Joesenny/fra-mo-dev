@@ -6,7 +6,7 @@ import Image from 'next/image'
 import JoeSenny from '../../public/images/profile/picresize.png'
 import {useInView, useSpring, useMotionValue } from 'framer-motion'
 import Skills from '@/components/Skills'
-import Experience from '@/components/Experience'
+import Education from '@/components/Education'
 
 const AnimatedNumbers = ({value}) => {
 const ref = useRef(null)
@@ -119,11 +119,11 @@ const about = () => {
 
 
           <Skills/>
-          <Experience/>
+          <Education/>
           </Layout>
         
         </main>
-
+  
 
 
 
