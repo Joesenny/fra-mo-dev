@@ -10,7 +10,6 @@ import Education from '@/components/Education'
 
 const AnimatedNumbers = ({value}) => {
 const ref = useRef(null)
-
 const motionValue = useMotionValue(0)
 const springValue = useSpring(motionValue, { duration: 3000 })
 const isInView =  useInView(ref, {once: true}) 
@@ -29,10 +28,8 @@ useEffect(() => {
   })  
 
     }, [springValue, value])
-
   
-
-  return <span ref={ref}> </span>
+   return <span ref={ref}> </span>
 }
 
 
